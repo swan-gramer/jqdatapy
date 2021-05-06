@@ -25,10 +25,7 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
 
 install_reqs = parse_requirements("requirements.txt", session=False)
 
-try:
-    requirements = [str(ir.req) for ir in install_reqs]
-except:
-    requirements = [str(ir.requirement) for ir in install_reqs]
+requirements = [str(ir.req) if hasattr(ir, 'req') else str(ir.requirement) for ir in install_reqs]
 
 setup(
     name='jqdatapy',
