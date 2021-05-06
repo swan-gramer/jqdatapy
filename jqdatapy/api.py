@@ -30,6 +30,11 @@ def run_query(table='finance.STK_EXCHANGE_TRADE_INFO', columns=None, conditions=
 def get_query_count():
     return request_jqdata(method='get_query_count',parse_dates=None)
 
+def get_ticks(code=None, count=10, end_date=None):
+    if code:
+        return request_jqdata(method='get_ticks', code=code, count=count, end_date=end_date)
+
+
 
 def get_money_flow(code, date, end_date=None):
     """
@@ -237,11 +242,17 @@ if __name__ == "__main__":
     # print(run_query(count=10, parse_dates=None))
     # print(get_all_securities(code='futures'))
     # print(get_future_contracts())
-    print(get_dominant_future())
-    print(get_bars(code='AU9999.XSGE'))
-    print(get_security_info())
+    # print(get_dominant_future())
+    # print(get_bars(code='AU9999.XSGE'))
+    # print(get_security_info())
     # print(get_price_period(end_date='2010-01-01'))
     # print(get_query_count())
+
+    # print(get_ticks(code='000001.XSHE', end_date='2021-04-24'))
+    print(get_bars(code='000001.XSHE', end_date='2021-04-24', count=10, unit='1m'))
+    # print(get_all_securities())
+    print(get_query_count())
+    print('---- end ----')
 
 # the __all__ is generated
 __all__ = ['HttpAccessError', 'run_query', 'get_money_flow', 'get_future_contracts', 'get_security_info',
