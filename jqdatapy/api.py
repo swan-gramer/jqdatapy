@@ -257,4 +257,4 @@ if __name__ == "__main__":
 # the __all__ is generated
 __all__ = ['HttpAccessError', 'run_query', 'get_money_flow', 'get_future_contracts', 'get_security_info',
            'get_dominant_future', 'get_all_securities', 'get_trade_days', 'get_fundamentals', 'get_mtss',
-           'get_all_trade_days', 'get_bars', 'get_price_period', 'get_bars_period', 'get_token', 'request_jqdata']
+           'get_all_trade_days', 'get_bars', 'get_price_period', 'get_bars_period', 'get_token', 'request_jqdata', 'get_query_count']
